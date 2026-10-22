@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#16a34a">
+<meta name="description" content="Naija Fresher Hub - A complete student guide for freshers across Nigerian universities, polytechnics and colleges of education.">
+<title>Naija Fresher Hub | Built by PelzX</title>
+
+<style>
+:root{
+    --green:#16a34a;
+    --green-dark:#15803d;
+    --green-light:#dcfce7;
+    --black:#09090b;
+    --dark:#111827;
+    --gray:#6b7280;
+    --light:#f6f8f7;
+    --white:#ffffff;
+    --border:#e5e7eb;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --radius:18px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--black);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
+    font-size:20px;
+}
+
+.logo-box{
+    width:42px;
+    height:42px;
+    background:var(--black);
+    color:white;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+}
+
+.logo span{
+    color:var(--green);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:700;
+    color:#374151;
+}
+
+.nav-links a:hover{
+    color:var(--green);
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:var(--black);
+    color:white;
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    font-size:20px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:
+    radial-gradient(circle at 85% 20%,rgba(22,163,74,.18),transparent 28%),
+    linear-gradient(135deg,#ffffff,#f0fdf4);
+    padding:85px 0 70px;
+    overflow:hidden;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:50px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--green-light);
+    color:var(--green-dark);
+    padding:8px 14px;
+    border-radius:50px;
+    font-weight:800;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(40px,7vw,72px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:var(--green);
+}
+
+.hero p{
+    color:var(--gray);
+    font-size:18px;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    border:0;
+    border-radius:12px;
+    padding:14px 20px;
+    font-weight:800;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:var(--black);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--green);
+    transform:translateY(-2px);
+}
+
+.btn-green{
+    background:var(--green);
+    color:white;
+}
+
+.btn-green:hover{
+    background:var(--green-dark);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:1px solid var(--border);
+    background:white;
+    color:var(--black);
+}
+
+.btn-outline:hover{
+    border-color:var(--green);
+    color:var(--green);
+}
+
+.hero-card{
+    background:var(--black);
+    color:white;
+    padding:30px;
+    border-radius:28px;
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-card:after{
+    content:"";
+    width:180px;
+    height:180px;
+    background:var(--green);
+    border-radius:50%;
+    position:absolute;
+    right:-80px;
+    top:-80px;
+    opacity:.7;
+}
+
+.hero-card h3{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.hero-stat{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.hero-stat:last-child{
+    border-bottom:0;
+}
+
+.hero-stat strong{
+    color:#86efac;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:75px 0;
+}
+
+.section-head{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 45px;
+}
+
+.section-head .mini{
+    color:var(--green);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:900;
+    font-size:12px;
+}
+
+.section-head h2{
+    font-size:clamp(30px,5vw,46px);
+    line-height:1.1;
+    margin:10px 0 14px;
+}
+
+.section-head p{
+    color:var(--gray);
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+    max-width:650px;
+    margin:0 auto 35px;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:17px 20px 17px 50px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    outline:none;
+    background:white;
+    font-size:15px;
+    box-shadow:var(--shadow);
+}
+
+.search-box input:focus{
+    border-color:var(--green);
+}
+
+.search-icon{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+    border-color:#bbf7d0;
+}
+
+.card-icon{
+    width:52px;
+    height:52px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--green-light);
+    font-size:24px;
+    margin-bottom:17px;
+}
+
+.card h3{
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:var(--gray);
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.card-link{
+    color:var(--green-dark);
+    font-weight:800;
+    font-size:14px;
+}
+
+/* ================= CHECKLIST ================= */
+
+.checklist-area{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.progress-card,
+.checklist-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+}
+
+.progress-number{
+    font-size:45px;
+    font-weight:900;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+    background:#e5e7eb;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    background:var(--green);
+    transition:.4s;
+}
+
+.check-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:13px 0;
+    border-bottom:1px solid #f0f0f0;
+}
+
+.check-item:last-child{
+    border-bottom:0;
+}
+
+.check-item input{
+    width:18px;
+    height:18px;
+    accent-color:var(--green);
+}
+
+.check-item.checked label{
+    text-decoration:line-through;
+    color:#9ca3af;
+}
+
+/* ================= CALCULATOR ================= */
+
+.calculator{
+    max-width:850px;
+    margin:auto;
+    background:var(--black);
+    color:white;
+    border-radius:25px;
+    padding:30px;
+}
+
+.calc-row{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:12px;
+    margin-bottom:12px;
+}
+
+.calc-row input{
+    width:100%;
+    padding:13px;
+    border-radius:10px;
+    border:1px solid #374151;
+    background:#1f2937;
+    color:white;
+    outline:none;
+}
+
+.calc-result{
+    margin-top:20px;
+    padding:25px;
+    background:#17251c;
+    border-radius:15px;
+    text-align:center;
+}
+
+.calc-result span{
+    color:#86efac;
+}
+
+#gpaResult{
+    font-size:40px;
+    font-weight:900;
+    color:#86efac;
+}
+
+/* ================= GUIDES ================= */
+
+.guide-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.guide{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    border:1px solid var(--border);
+}
+
+.guide h3{
+    margin-bottom:15px;
+}
+
+.guide ul{
+    padding-left:20px;
+    color:var(--gray);
+}
+
+.guide li{
+    margin:8px 0;
+}
+
+/* ================= BUDGET ================= */
+
+.budget-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:22px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    font-size:14px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:14px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    outline:none;
+    background:white;
+}
+
+.budget-result{
+    margin-top:20px;
+    padding:20px;
+    background:var(--green-light);
+    border-radius:15px;
+}
+
+.budget-result strong{
+    font-size:25px;
+    color:var(--green-dark);
+}
+
+/* ================= OPPORTUNITIES ================= */
+
+.opportunity{
+    position:relative;
+}
+
+.tag{
+    display:inline-block;
+    background:#f3f4f6;
+    color:#374151;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.opportunity .tag.green{
+    background:var(--green-light);
+    color:var(--green-dark);
+}
+
+/* ================= FAQ ================= */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+    border:1px solid var(--border);
+    margin-bottom:12px;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.faq-question{
+    width:100%;
+    padding:18px 20px;
+    background:white;
+    border:0;
+    display:flex;
+    justify-content:space-between;
+    text-align:left;
+    font-weight:800;
+    font-size:15px;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 20px 20px;
+    color:var(--gray);
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    background:var(--black);
+    color:white;
+    border-radius:28px;
+    padding:55px;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:clamp(30px,5vw,48px);
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#d1d5db;
+    max-width:650px;
+    margin:0 auto 25px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#050505;
+    color:white;
+    padding:50px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:40px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#9ca3af;
+    font-size:14px;
+}
+
+footer a:hover{
+    color:#86efac;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.copyright{
+    border-top:1px solid #27272a;
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+    color:#71717a;
+    font-size:13px;
+}
+
+.pelzx{
+    color:#86efac;
+    font-weight:900;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:var(--black);
+    color:white;
+    padding:15px 20px;
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    transform:translateY(120px);
+    opacity:0;
+    transition:.3s;
+    z-index:3000;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        left:4%;
+        right:4%;
+        top:78px;
+        background:white;
+        border:1px solid var(--border);
+        border-radius:15px;
+        padding:15px;
+        flex-direction:column;
+        align-items:flex-start;
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:60px;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .checklist-area{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .cards,
+    .guide-grid{
+        grid-template-columns:1fr;
+    }
+
+    .calc-row{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        padding:35px 20px;
+    }
+
+    section{
+        padding:55px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+<div class="container navbar">
+
+<a href="#home" class="logo">
+    <div class="logo-box">NF</div>
+    <div>Naija <span>Fresher</span> Hub</div>
+</a>
+
+<nav>
+<ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#guides">Guides</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+    <li><a href="#calculator">CGPA</a></li>
+    <li><a href="#opportunities">Opportunities</a></li>
+    <li><a href="#faq">FAQ</a></li>
+</ul>
+</nav>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+    🇳🇬 Made for Nigerian Students
+</div>
+
+<h1>
+    Your first year.<br>
+    <span>Made easier.</span>
+</h1>
+
+<p>
+    Naija Fresher Hub is your all-in-one guide to surviving,
+    understanding and enjoying university life in Nigeria.
+    From admission and academics to budgeting, campus life and opportunities.
+</p>
+
+<div class="hero-buttons">
+    <a href="#guides" class="btn btn-primary">Explore Fresher Guide →</a>
+    <a href="#checklist" class="btn btn-green">Fresher Checklist</a>
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<h3>🎓 Fresher Dashboard</h3>
+
+<div class="hero-stat">
+    <span>Admission</span>
+    <strong>01</strong>
+</div>
+
+<div class="hero-stat">
+    <span>Academics</span>
+    <strong>02</strong>
+</div>
+
+<div class="hero-stat">
+    <span>Campus Life</span>
+    <strong>03</strong>
+</div>
+
+<div class="hero-stat">
+    <span>Money & Budget</span>
+    <strong>04</strong>
+</div>
+
+<div class="hero-stat">
+    <span>Opportunities</span>
+    <strong>05</strong>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= QUICK ACCESS ================= -->
+
+<section>
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Quick Access</div>
+<h2>Everything a fresher needs.</h2>
+<p>
+Explore important information and tools designed to make your transition into higher education easier.
+</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">📝</div>
+<h3>Admission Guide</h3>
+<p>Understand admission, acceptance, clearance and registration.</p>
+<a href="#admission" class="card-link">Learn more →</a>
+</div>
+
+<div class="card">
+<div class="card-icon">📚</div>
+<h3>Academic Survival</h3>
+<p>Learn about courses, units, GPA, CGPA, exams and studying.</p>
+<a href="#academics" class="card-link">Explore →</a>
+</div>
+
+<div class="card">
+<div class="card-icon">🏫</div>
+<h3>Campus Life</h3>
+<p>Know what to expect when you enter university.</p>
+<a href="#campus" class="card-link">Explore →</a>
+</div>
+
+<div class="card">
+<div class="card-icon">💰</div>
+<h3>Money & Budget</h3>
+<p>Plan your spending and avoid unnecessary financial stress.</p>
+<a href="#budget" class="card-link">Plan now →</a>
+</div>
+
+<div class="card">
+<div class="card-icon">💻</div>
+<h3>Student Tech</h3>
+<p>Discover useful digital tools for learning and productivity.</p>
+<a href="#tech" class="card-link">View tools →</a>
+</div>
+
+<div class="card">
+<div class="card-icon">🎯</div>
+<h3>Opportunities</h3>
+<p>Find scholarships, internships, competitions and programs.</p>
+<a href="#opportunities" class="card-link">Explore →</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section style="background:white;">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Student Search</div>
+<h2>What do you need help with?</h2>
+<p>Search through the resources available on Naija Fresher Hub.</p>
+</div>
+
+<div class="search-box">
+<span class="search-icon">🔎</span>
+<input
+type="text"
+id="resourceSearch"
+placeholder="Search admission, CGPA, hostel, scholarship..."
+onkeyup="searchResources()">
+</div>
+
+<div class="cards" id="resourceCards">
+
+<div class="card searchable">
+<div class="card-icon">🎓</div>
+<h3>University Life</h3>
+<p>Learn how university life differs from secondary school.</p>
+</div>
+
+<div class="card searchable">
+<div class="card-icon">📊</div>
+<h3>CGPA Calculator</h3>
+<p>Calculate your GPA and understand your CGPA.</p>
+</div>
+
+<div class="card searchable">
+<div class="card-icon">💼</div>
+<h3>Student Opportunities</h3>
+<p>Explore opportunities that can help you grow.</p>
+</div>
+
+<div class="card searchable">
+<div class="card-icon">🛏️</div>
+<h3>Hostel Guide</h3>
+<p>Things to consider before choosing accommodation.</p>
+</div>
+
+<div class="card searchable">
+<div class="card-icon">💻</div>
+<h3>Student Technology</h3>
+<p>Useful digital tools for Nigerian students.</p>
+</div>
+
+<div class="card searchable">
+<div class="card-icon">💵</div>
+<h3>Budget Planning</h3>
+<p>Create a simple fresher spending plan.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= GUIDES ================= -->
+
+<section id="guides">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Fresher Guides</div>
+<h2>Understand your new environment.</h2>
+<p>
+University can feel confusing at first. These guides explain the important things you need to know.
+</p>
+</div>
+
+<div class="guide-grid">
+
+<div class="guide" id="admission">
+<h3>📝 Admission & Clearance</h3>
+<ul>
+<li>Keep your admission documents safe.</li>
+<li>Follow your institution's official instructions.</li>
+<li>Complete acceptance procedures when required.</li>
+<li>Prepare documents needed for clearance.</li>
+<li>Complete school and departmental registration.</li>
+<li>Keep copies of important documents.</li>
+</ul>
+</div>
+
+<div class="guide" id="academics">
+<h3>📚 Academic Survival</h3>
+<ul>
+<li>Understand your course units.</li>
+<li>Attend lectures consistently.</li>
+<li>Learn how your institution calculates GPA/CGPA.</li>
+<li>Keep track of assignments and tests.</li>
+<li>Start preparing for examinations early.</li>
+<li>Ask lecturers or academic advisers when confused.</li>
+</ul>
+</div>
+
+<div class="guide" id="campus">
+<h3>🏫 Campus Life</h3>
+<ul>
+<li>Learn the important locations on campus.</li>
+<li>Understand your faculty and department structure.</li>
+<li>Join activities that genuinely interest you.</li>
+<li>Build healthy friendships.</li>
+<li>Respect campus rules.</li>
+<li>Be careful with your personal information and belongings.</li>
+</ul>
+</div>
+
+<div class="guide">
+<h3>🛏️ Hostel & Accommodation</h3>
+<ul>
+<li>Understand your accommodation options.</li>
+<li>Check location and transportation.</li>
+<li>Know what items are allowed.</li>
+<li>Keep valuables secure.</li>
+<li>Respect roommates and neighbours.</li>
+<li>Know emergency contacts and campus security channels.</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= CHECKLIST ================= -->
+
+<section id="checklist" style="background:white;">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Fresher Checklist</div>
+<h2>Don't forget the important stuff.</h2>
+<p>Tick each item as you complete it.</p>
+</div>
+
+<div class="checklist-area">
+
+<div class="progress-card">
+
+<h3>Your Fresher Progress</h3>
+
+<div class="progress-number" id="progressNumber">0%</div>
+
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<p style="color:#6b7280;">
+Your progress is saved on this device.
+</p>
+
+<br>
+
+<button class="btn btn-green" onclick="resetChecklist()">
+Reset Checklist
+</button>
+
+</div>
+
+<div class="checklist-card">
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Confirm admission details</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Prepare important documents</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Complete acceptance/clearance</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Pay required school fees</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Complete course registration</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Get student identification where applicable</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Understand your timetable</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Locate important places on campus</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Organize your study materials</label>
+</div>
+
+<div class="check-item">
+<input type="checkbox" class="task">
+<label>Create a realistic student budget</label>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= CGPA ================= -->
+
+<section id="calculator">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Academic Tool</div>
+<h2>Simple GPA Calculator</h2>
+<p>
+Enter your course grade points and units to calculate your GPA.
+</p>
+</div>
+
+<div class="calculator">
+
+<h3 style="margin-bottom:20px;">Enter your courses</h3>
+
+<div id="courseInputs">
+
+<div class="calc-row">
+<input type="number" class="unit" placeholder="Course Unit" min="1">
+<input type="number" class="point" placeholder="Grade Point" min="0" max="5">
+<button class="btn btn-outline" onclick="removeCourse(this)">Remove</button>
+</div>
+
+<div class="calc-row">
+<input type="number" class="unit" placeholder="Course Unit" min="1">
+<input type="number" class="point" placeholder="Grade Point" min="0" max="5">
+<button class="btn btn-outline" onclick="removeCourse(this)">Remove</button>
+</div>
+
+</div>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;">
+
+<button class="btn btn-green" onclick="addCourse()">
++ Add Course
+</button>
+
+<button class="btn btn-primary" onclick="calculateGPA()">
+Calculate GPA
+</button>
+
+</div>
+
+<div class="calc-result">
+<div>Your GPA</div>
+<div id="gpaResult">0.00</div>
+<small id="gpaMessage">Enter your courses above.</small>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= BUDGET ================= -->
+
+<section id="budget" style="background:white;">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Money Management</div>
+<h2>Fresher Budget Planner</h2>
+<p>
+Create a simple monthly budget so you know where your money is going.
+</p>
+</div>
+
+<div class="budget-box">
+
+<div class="form-group">
+<label>Monthly Money Available (₦)</label>
+<input type="number" id="income" placeholder="e.g. 100000">
+</div>
+
+<div class="form-group">
+<label>Food (₦)</label>
+<input type="number" id="food" placeholder="e.g. 30000">
+</div>
+
+<div class="form-group">
+<label>Transportation (₦)</label>
+<input type="number" id="transport" placeholder="e.g. 15000">
+</div>
+
+<div class="form-group">
+<label>Data & Internet (₦)</label>
+<input type="number" id="data" placeholder="e.g. 10000">
+</div>
+
+<div class="form-group">
+<label>Other Expenses (₦)</label>
+<input type="number" id="other" placeholder="e.g. 10000">
+</div>
+
+<button class="btn btn-green" onclick="calculateBudget()">
+Calculate Budget
+</button>
+
+<div class="budget-result">
+<p>Estimated Remaining Balance</p>
+<strong id="remaining">₦0</strong>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= TECH ================= -->
+
+<section id="tech">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Student Technology</div>
+<h2>Build your digital student toolkit.</h2>
+<p>
+Technology can make studying, organizing and creating much easier.
+</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">🤖</div>
+<h3>AI Study Tools</h3>
+<p>Use AI responsibly to explain concepts, brainstorm and improve your learning.</p>
+<span class="tag green">LEARNING</span>
+</div>
+
+<div class="card">
+<div class="card-icon">📄</div>
+<h3>PDF Tools</h3>
+<p>Useful for reading, organizing and working with academic documents.</p>
+<span class="tag">PRODUCTIVITY</span>
+</div>
+
+<div class="card">
+<div class="card-icon">☁️</div>
+<h3>Cloud Storage</h3>
+<p>Keep important academic files backed up instead of relying on one device.</p>
+<span class="tag">FILES</span>
+</div>
+
+<div class="card">
+<div class="card-icon">🎨</div>
+<h3>Creative Tools</h3>
+<p>Explore design and content creation tools that can help develop your skills.</p>
+<span class="tag">CREATIVE</span>
+</div>
+
+<div class="card">
+<div class="card-icon">💻</div>
+<h3>Coding</h3>
+<p>Learn programming and build projects that can strengthen your portfolio.</p>
+<span class="tag green">SKILLS</span>
+</div>
+
+<div class="card">
+<div class="card-icon">📅</div>
+<h3>Productivity</h3>
+<p>Use calendars, notes and task managers to organize your academic life.</p>
+<span class="tag">ORGANIZATION</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= OPPORTUNITIES ================= -->
+
+<section id="opportunities" style="background:white;">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Grow Beyond The Classroom</div>
+<h2>Opportunities for students.</h2>
+<p>
+Don't wait until graduation before developing your skills and experience.
+</p>
+</div>
+
+<div class="cards">
+
+<div class="card opportunity">
+<span class="tag green">SCHOLARSHIP</span>
+<h3>Scholarships</h3>
+<p>Look for legitimate scholarships that match your academic or personal eligibility.</p>
+<a href="#" onclick="showNotice('Always verify scholarship information through official sources.');return false;" class="card-link">Learn more →</a>
+</div>
+
+<div class="card opportunity">
+<span class="tag green">TECH</span>
+<h3>Tech Programs</h3>
+<p>Explore coding, design, data, cybersecurity, AI and other technology programs.</p>
+<a href="#" onclick="showNotice('Check official program websites for current applications.');return false;" class="card-link">Explore →</a>
+</div>
+
+<div class="card opportunity">
+<span class="tag green">INTERNSHIP</span>
+<h3>Internships</h3>
+<p>Gain practical experience and learn how professional workplaces operate.</p>
+<a href="#" onclick="showNotice('Always confirm opportunities through the organization's official website.');return false;" class="card-link">Explore →</a>
+</div>
+
+<div class="card opportunity">
+<span class="tag green">COMPETITION</span>
+<h3>Competitions</h3>
+<p>Participate in competitions to challenge yourself and build your portfolio.</p>
+<a href="#" onclick="showNotice('Search for competitions relevant to your field.');return false;" class="card-link">Explore →</a>
+</div>
+
+<div class="card opportunity">
+<span class="tag green">FELLOWSHIP</span>
+<h3>Fellowships</h3>
+<p>Develop leadership, professional and community-focused skills.</p>
+<a href="#" onclick="showNotice('Check eligibility and deadlines before applying.');return false;" class="card-link">Explore →</a>
+</div>
+
+<div class="card opportunity">
+<span class="tag green">GRANTS</span>
+<h3>Student Grants</h3>
+<p>Discover legitimate funding opportunities for projects and development.</p>
+<a href="#" onclick="showNotice('Verify every funding opportunity before submitting information.');return false;" class="card-link">Explore →</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section id="faq">
+<div class="container">
+
+<div class="section-head">
+<div class="mini">Frequently Asked Questions</div>
+<h2>Questions every fresher asks.</h2>
+<p>Quick answers to common university questions.</p>
+</div>
+
+<div class="faq">
+
+<div class="faq-item">
+<button class="faq-question">
+What is a course unit?
+<span>+</span>
+</button>
+<div class="faq-answer">
+A course unit is a measure of the academic weight assigned to a course. The number of units can affect how the course contributes to your GPA.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What is GPA?
+<span>+</span>
+</button>
+<div class="faq-answer">
+GPA means Grade Point Average. It represents your academic performance for a particular semester or period, based on the grading system used by your institution.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What is CGPA?
+<span>+</span>
+</button>
+<div class="faq-answer">
+CGPA means Cumulative Grade Point Average. It represents your cumulative academic performance across the semesters included in the calculation.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Is university life difficult?
+<span>+</span>
+</button>
+<div class="faq-answer">
+University can be challenging, but good organization, consistent study habits, asking for help and managing your time can make the transition easier.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Should I join student organizations?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Student organizations can help you meet people, develop skills and participate in activities. Choose communities that genuinely interest you and respect your institution's rules.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Where should I get official school information?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Use your institution's official website, verified official social channels, student portal and authorized school communication channels for important information.
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section>
+<div class="container">
+
+<div class="cta">
+
+<h2>Welcome to your next chapter.</h2>
+
+<p>
+University is more than lectures and examinations.
+Learn, explore, build skills, meet people and make your experience count.
+</p>
+
+<a href="#home" class="btn btn-green">
+Back to Top ↑
+</a>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<h3>Naija Fresher Hub</h3>
+<p>
+A student-focused platform designed to help Nigerian freshers understand university life and prepare for their journey.
+</p>
+
+<br>
+
+<p>
+<strong class="pelzx">Built by PelzX</strong>
+</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+
+<div class="footer-links">
+<a href="#home">Home</a>
+<a href="#guides">Fresher Guides</a>
+<a href="#checklist">Checklist</a>
+<a href="#calculator">CGPA Calculator</a>
+<a href="#opportunities">Opportunities</a>
+</div>
+
+</div>
+
+<div>
+<h3>Developer</h3>
+
+<div class="footer-links">
+<p>Fasinasi Oluwapelumi</p>
+<p>PelzX — Tech & Art Creative</p>
+
+<a href="mailto:fasinasiakinbolarinwa@gmail.com">
+Email Me
+</a>
+
+<a href="https://wa.me/2349074956155" target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+<span>
+© <span id="year"></span> Naija Fresher Hub
+</span>
+
+<span>
+Designed & Developed by <span class="pelzx">PelzX</span>
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+
+/* ================= YEAR ================= */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+/* ================= CHECKLIST ================= */
+
+const tasks = document.querySelectorAll(".task");
+
+function loadChecklist(){
+
+    const saved =
+    JSON.parse(localStorage.getItem("naijaFresherChecklist") || "[]");
+
+    tasks.forEach((task,index)=>{
+
+        task.checked = saved[index] || false;
+
+        updateTaskStyle(task);
+
+    });
+
+    updateProgress();
+}
+
+function saveChecklist(){
+
+    const data =
+    Array.from(tasks).map(task=>task.checked);
+
+    localStorage.setItem(
+        "naijaFresherChecklist",
+        JSON.stringify(data)
+    );
+}
+
+function updateTaskStyle(task){
+
+    const parent = task.closest(".check-item");
+
+    if(task.checked){
+        parent.classList.add("checked");
+    }else{
+        parent.classList.remove("checked");
+    }
+}
+
+function updateProgress(){
+
+    const completed =
+    Array.from(tasks).filter(task=>task.checked).length;
+
+    const total = tasks.length;
+
+    const percentage =
+    total === 0 ? 0 : Math.round((completed/total)*100);
+
+    document.getElementById("progressNumber").textContent =
+    percentage + "%";
+
+    document.getElementById("progressFill").style.width =
+    percentage + "%";
+}
+
+tasks.forEach(task=>{
+
+    task.addEventListener("change",()=>{
+
+        updateTaskStyle(task);
+        saveChecklist();
+        updateProgress();
+
+    });
+
+});
+
+function resetChecklist(){
+
+    tasks.forEach(task=>{
+        task.checked=false;
+        updateTaskStyle(task);
+    });
+
+    saveChecklist();
+    updateProgress();
+
+    showNotice("Checklist reset.");
+}
+
+loadChecklist();
+
+
+/* ================= GPA CALCULATOR ================= */
+
+function addCourse(){
+
+    const container =
+    document.getElementById("courseInputs");
+
+    const row =
+    document.createElement("div");
+
+    row.className="calc-row";
+
+    row.innerHTML=`
+        <input type="number" class="unit"
+        placeholder="Course Unit" min="1">
+
+        <input type="number" class="point"
+        placeholder="Grade Point" min="0" max="5">
+
+        <button class="btn btn-outline"
+        onclick="removeCourse(this)">
+        Remove
+        </button>
+    `;
+
+    container.appendChild(row);
+}
+
+function removeCourse(button){
+
+    const rows =
+    document.querySelectorAll(".calc-row");
+
+    if(rows.length <= 1){
+        showNotice("At least one course is required.");
+        return;
+    }
+
+    button.parentElement.remove();
+}
+
+function calculateGPA(){
+
+    const units =
+    document.querySelectorAll(".unit");
+
+    const points =
+    document.querySelectorAll(".point");
+
+    let totalUnits=0;
+    let totalQualityPoints=0;
+
+    for(let i=0;i<units.length;i++){
+
+        const unit =
+        parseFloat(units[i].value);
+
+        const point =
+        parseFloat(points[i].value);
+
+        if(isNaN(unit) || isNaN(point)){
+            showNotice("Please complete every course.");
+            return;
+        }
+
+        if(unit <= 0 || point < 0 || point > 5){
+            showNotice("Check your course units and grade points.");
+            return;
+        }
+
+        totalUnits += unit;
+
+        totalQualityPoints +=
+        unit * point;
+    }
+
+    if(totalUnits===0){
+        showNotice("Enter your course details.");
+        return;
+    }
+
+    const gpa =
+    totalQualityPoints / totalUnits;
+
+    document.getElementById("gpaResult").textContent =
+    gpa.toFixed(2);
+
+    let message="Keep learning and stay consistent.";
+
+    if(gpa>=4.5){
+        message="Excellent performance. Keep it up!";
+    }else if(gpa>=3.5){
+        message="Great performance. Keep pushing!";
+    }else if(gpa>=2.5){
+        message="Good foundation. You can improve further.";
+    }else{
+        message="Don't give up. Review your study strategy and seek help.";
+    }
+
+    document.getElementById("gpaMessage").textContent =
+    message;
+}
+
+
+/* ================= BUDGET ================= */
+
+function numberValue(id){
+
+    return parseFloat(
+        document.getElementById(id).value
+    ) || 0;
+}
+
+function formatNaira(amount){
+
+    return "₦" +
+    amount.toLocaleString("en-NG",{
+        minimumFractionDigits:0,
+        maximumFractionDigits:0
+    });
+}
+
+function calculateBudget(){
+
+    const income =
+    numberValue("income");
+
+    const food =
+    numberValue("food");
+
+    const transport =
+    numberValue("transport");
+
+    const data =
+    numberValue("data");
+
+    const other =
+    numberValue("other");
+
+    if(income<=0){
+
+        showNotice("Enter your available monthly money.");
+
+        return;
+    }
+
+    const totalExpenses =
+    food + transport + data + other;
+
+    const remaining =
+    income - totalExpenses;
+
+    const result =
+    document.getElementById("remaining");
+
+    result.textContent =
+    formatNaira(remaining);
+
+    if(remaining<0){
+
+        result.style.color="#b91c1c";
+
+    }else{
+
+        result.style.color="var(--green-dark)";
+
+    }
+}
+
+
+/* ================= FAQ ================= */
+
+document.querySelectorAll(".faq-question")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const item =
+        button.parentElement;
+
+        item.classList.toggle("active");
+
+        const symbol =
+        button.querySelector("span");
+
+        symbol.textContent =
+        item.classList.contains("active")
+        ? "−"
+        : "+";
+
+    });
+
+});
+
+
+/* ================= SEARCH ================= */
+
+function searchResources(){
+
+    const search =
+    document.getElementById("resourceSearch")
+    .value
+    .toLowerCase()
+    .trim();
+
+    const cards =
+    document.querySelectorAll(".searchable");
+
+    cards.forEach(card=>{
+
+        const text =
+        card.innerText.toLowerCase();
+
+        if(text.includes(search)){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+}
+
+
+/* ================= NOTIFICATION ================= */
+
+function showNotice(message){
+
+    const toast =
+    document.getElementById("toast");
+
+    toast.textContent=message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
+}
+
+</script>
+
+</body>
+</html>
